@@ -1,0 +1,18 @@
+import logging
+from aiogram import Bot, Dispatcher, executor, types
+
+from handlers.custom_config import choose_cb, bot
+from handlers.callback_handler import first_layer_handler, second_layer_handler
+from handlers import message_handler
+
+
+logging.basicConfig(level=logging.INFO)
+
+dp = Dispatcher(bot)
+
+if __name__ == "__main__":
+    message_handler.setup(dp)
+    first_layer_handler.setup(dp)
+    second_layer_handler.setup(dp)
+    executor.start_polling(dp, skip_updates=True)    
+
