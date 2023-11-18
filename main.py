@@ -1,7 +1,7 @@
 import logging
-from aiogram import Bot, Dispatcher, executor, types
+from aiogram import Dispatcher, executor
 
-from handlers.custom_config import choose_cb, bot
+from handlers.custom_config import bot
 from handlers.callback_handler import first_layer_handler, second_layer_handler
 from handlers import message_handler
 
